@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main # Change this to your default branch
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   npm-publish:
     name: npm-publish
