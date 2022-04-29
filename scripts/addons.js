@@ -21,10 +21,10 @@ inquirer
       case 'exit':
         break;
       default:
-        fsExtra.copySync(`./node_modules/cra-template-demplate/addons/${addon}/template`, '.', {
+        fsExtra.copySync(`./node_modules/demplate-addons/addons/${addon}/template`, '.', {
           overwrite: true
         });
-        const rawDataAddon = fs.readFileSync(`node_modules/cra-template-demplate/addons/${addon}/template.json`);
+        const rawDataAddon = fs.readFileSync(`node_modules/demplate-addons/addons/${addon}/template.json`);
         const rawDataPackage = fs.readFileSync(`./package.json`);
         const {
           package: {
