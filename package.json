@@ -1,0 +1,28 @@
+{
+  "name": "demplate-addons",
+  "version": "0.0.1",
+  "author": {
+    "email": "efim@dezh.in",
+    "name": "Efim Dezhin"
+  },
+  "description": "cra-template-demplate addon utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edejin/demplate-addons"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "scripts",
+    "addons"
+  ],
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "fs-extra": "^10.1.0"
+  },
+  "bin": {
+    "demplate-addons": "./scripts/addons.js"
+  }
+}
