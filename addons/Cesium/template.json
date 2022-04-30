@@ -1,0 +1,12 @@
+{
+  "package": {
+    "dependencies": {
+      "cesium": "^1.92.0"
+    },
+    "devDependencies": {
+      "copy-webpack-plugin": "^10.2.4",
+      "html-webpack-tags-plugin": "^3.0.2",
+      "webpack": "^5.72.0"
+    }
+  }
+}

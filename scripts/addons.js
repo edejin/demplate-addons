@@ -10,7 +10,11 @@ inquirer
       type: "list",
       name: "addon",
       message: "Select addon",
-      choices: ["OpenLayers", "exit"]
+      choices: [
+        ...fs.readdirSync('./node_modules/demplate-addons/addons/', {withFileTypes: true})
+          .filter(dirent => dirent.isDirectory())
+          .map(dirent => dirent.name),
+        "exit"]
     }
   ])
   .then((answers) => {
