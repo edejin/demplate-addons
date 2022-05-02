@@ -58,10 +58,16 @@ inquirer
           overwrite: true
         });
         mergeJson(`${dirPath}${addon}/template.json`, `./package.json`);
+        let cmd = ''
         if (ifYarn()) {
-          exec('yarn')
+          cmd = 'yarn';
         } else {
-          exec('npm install')
+          cmd = 'npm install'
+        }
+        if (cmd) {
+          exec(cmd, (err) => {
+            console.log(err);
+          })
         }
     }
   });
