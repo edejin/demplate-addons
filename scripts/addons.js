@@ -2,8 +2,8 @@
 
 const inquirer = require("inquirer");
 const fsExtra = require('fs-extra');
-const fs = require('node:fs');
-const { exec } = require('node:child_process');
+const fs = require('fs');
+const { exec } = require('child_process');
 
 const dirPath = './node_modules/demplate-addons/addons/';
 
