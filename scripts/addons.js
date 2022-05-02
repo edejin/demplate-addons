@@ -2,7 +2,36 @@
 
 const inquirer = require("inquirer");
 const fsExtra = require('fs-extra');
-const fs = require('fs');
+const fs = require('node:fs');
+const { exec } = require('node:child_process');
+
+const dirPath = './node_modules/demplate-addons/addons/';
+
+const ifYarn = () => fs.existsSync('./yarn.lock');
+
+const mergeJson = (from, to) => {
+
+  const rawDataAddon = fs.readFileSync(from);
+  const rawDataPackage = fs.readFileSync(to);
+  const {
+    package: {
+      dependencies = {},
+      devDependencies = {}
+    }
+  } = JSON.parse(rawDataAddon);
+  const packageJson = JSON.parse(rawDataPackage);
+  fs.writeFileSync(to, JSON.stringify({
+    ...packageJson,
+    dependencies: {
+      ...(packageJson.dependencies || {}),
+      ...dependencies
+    },
+    devDependencies: {
+      ...(packageJson.devDependencies || {}),
+      ...devDependencies
+    }
+  }, null, 2));
+}
 
 inquirer
   .prompt([
@@ -11,7 +40,7 @@ inquirer
       name: "addon",
       message: "Select addon",
       choices: [
-        ...fs.readdirSync('./node_modules/demplate-addons/addons/', {withFileTypes: true})
+        ...fs.readdirSync(dirPath, {withFileTypes: true})
           .filter(dirent => dirent.isDirectory())
           .map(dirent => dirent.name),
         "exit"]
@@ -25,28 +54,14 @@ inquirer
       case 'exit':
         break;
       default:
-        fsExtra.copySync(`./node_modules/demplate-addons/addons/${addon}/template`, '.', {
+        fsExtra.copySync(`${dirPath}${addon}/template`, '.', {
           overwrite: true
         });
-        const rawDataAddon = fs.readFileSync(`node_modules/demplate-addons/addons/${addon}/template.json`);
-        const rawDataPackage = fs.readFileSync(`./package.json`);
-        const {
-          package: {
-            dependencies = {},
-            devDependencies = {}
-          }
-        } = JSON.parse(rawDataAddon);
-        const packageJson = JSON.parse(rawDataPackage);
-        fs.writeFileSync('./package.json', JSON.stringify({
-          ...packageJson,
-          dependencies: {
-            ...(packageJson.dependencies || {}),
-            ...dependencies
-          },
-          devDependencies: {
-            ...(packageJson.devDependencies || {}),
-            ...devDependencies
-          }
-        }, null, 2));
+        mergeJson(`${dirPath}${addon}/template.json`, `./package.json`);
+        if (ifYarn()) {
+          exec('yarn')
+        } else {
+          exec('npm install')
+        }
     }
   });
