@@ -31,7 +31,7 @@ export const MapComponent: React.FC<Props> = (props) => {
   const rootElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mapElement.current) {
+    if (rootElement.current && mapElement.current) {
       const m = new Map({
         container: mapElement.current,
         style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
@@ -53,10 +53,12 @@ export const MapComponent: React.FC<Props> = (props) => {
         s.destroy();
         setMap(undefined);
         setScene(undefined);
-        rootElement.current!.appendChild(mapElement.current!);
+        if (rootElement.current) {
+          rootElement.current.appendChild(mapElement.current!);
+        }
       };
     }
-  }, [mapElement]);
+  }, [rootElement, mapElement]);
 
   useEffect(() => {
     if (scene) {
