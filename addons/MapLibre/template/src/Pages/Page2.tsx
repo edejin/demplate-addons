@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import maplibregl from 'maplibre-gl';
+import {Map} from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 const MapElement = styled.div`
@@ -9,12 +9,12 @@ const MapElement = styled.div`
 `;
 
 export const Page2 = () => {
-  const [map, setMap] = useState<maplibregl.Map | undefined>(undefined);
+  const [map, setMap] = useState<Map | undefined>(undefined);
   const mapElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (mapElement.current) {
-      const m = new maplibregl.Map({
+      const m = new Map({
         container: mapElement.current,
         style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
         center: [-74.5, 40], // starting position [lng, lat]
