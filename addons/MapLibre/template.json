@@ -2,6 +2,7 @@
   "package": {
     "dependencies": {
       "maplibre-gl": "^2.1.9",
+      "copy-webpack-plugin": "^10.2.4",
       "map-fonts": "https://dej.in.ua/map-fonts-1.0.0.tgz"
     }
   }

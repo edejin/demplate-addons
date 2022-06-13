@@ -4,6 +4,7 @@
       "maplibre-gl": "^2.1.9",
       "@antv/l7": "^2.8.42",
       "@antv/l7-maps": "^2.8.42",
+      "copy-webpack-plugin": "^10.2.4",
       "map-fonts": "https://dej.in.ua/map-fonts-1.0.0.tgz"
     }
   }
