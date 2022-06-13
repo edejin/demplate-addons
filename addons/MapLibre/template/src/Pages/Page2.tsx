@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import {Map} from 'maplibre-gl';
+import {Map, StyleSpecification} from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 const MapElement = styled.div`
@@ -10,23 +10,34 @@ const MapElement = styled.div`
 
 export const Page2 = () => {
   const [map, setMap] = useState<Map | undefined>(undefined);
+  const [style, setStyle] = useState<StyleSpecification | undefined>(undefined);
   const mapElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mapElement.current) {
+    fetch('/map-styles/style-dark.json')
+      .then((res) => res.text())
+      .then((text) => {
+        const path = document.location.origin + document.location.pathname;
+        return (JSON.parse(text.replaceAll('__REPLACE_ME__', path)) as unknown) as StyleSpecification;
+      })
+      .then((s) => setStyle(s));
+  }, []);
+
+  useEffect(() => {
+    if (mapElement.current && style) {
       const m = new Map({
         container: mapElement.current,
-        style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        style,
+        center: [54.32313290648384, 24.46175140019264], // starting position [lng, lat]
+        zoom: 14 // starting zoom
       });
       setMap(m);
       return () => {
         m.remove();
-        setMap(undefined)
-      }
+        setMap(undefined);
+      };
     }
-  }, [mapElement])
+  }, [mapElement, style]);
 
   return (
     <>

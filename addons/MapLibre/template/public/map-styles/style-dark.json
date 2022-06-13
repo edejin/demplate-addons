@@ -1,21 +1,10 @@
 {
   "version": 8,
+  "id": "dark-matter",
   "name": "Dark Matter",
   "sources": {
     "openmaptiles": {
-      "tiles": [
-        "http://some-host/all/{z}/{x}/{y}"
-      ],
-      "minzoom": 0,
-      "maxzoom": 14,
-      "type": "vector"
-    },
-    "water": {
-      "tiles": [
-        "http://some-host/water/{z}/{x}/{y}"
-      ],
-      "minzoom": 0,
-      "maxzoom": 9,
+      "url": "https://api.maptiler.com/tiles/v3/tiles.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
       "type": "vector"
     }
   },
@@ -25,16 +14,6 @@
       "type": "background",
       "paint": {
         "background-color": "rgb(12,12,12)"
-      }
-    },
-    {
-      "id": "water_polygons",
-      "type": "fill",
-      "source-layer": "water_polygons",
-      "source": "water",
-      "maxzoom": 9,
-      "paint": {
-        "fill-color": "rgb(27 ,27 ,29)"
       }
     },
     {
@@ -261,8 +240,7 @@
         "symbol-spacing": 500,
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Medium Italic",
-          "Noto Sans Italic"
+          "Metropolis Medium Italic"
         ],
         "text-rotation-alignment": "map",
         "text-size": 12
@@ -1254,8 +1232,7 @@
         "symbol-spacing": 350,
         "text-field": "{name:latin} {name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-max-angle": 30,
         "text-pitch-alignment": "viewport",
@@ -1301,8 +1278,7 @@
         "symbol-spacing": 350,
         "text-field": "{ref}",
         "text-font": [
-          "Metropolis Light",
-          "Noto Sans Regular"
+          "Metropolis Light"
         ],
         "text-pitch-alignment": "viewport",
         "text-rotation-alignment": "viewport",
@@ -1491,8 +1467,7 @@
         "text-anchor": "center",
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "center",
         "text-offset": [
@@ -1536,8 +1511,7 @@
         "text-anchor": "center",
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "center",
         "text-offset": [
@@ -1582,8 +1556,7 @@
         "text-anchor": "left",
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "left",
         "text-offset": [
@@ -1654,8 +1627,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "left",
         "text-offset": [
@@ -1731,8 +1703,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "left",
         "text-offset": [
@@ -1808,8 +1779,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-justify": "left",
         "text-offset": [
@@ -1853,8 +1823,7 @@
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-size": 10,
         "text-transform": "uppercase",
@@ -1896,8 +1865,7 @@
       "layout": {
         "text-field": "{name:latin}",
         "text-font": [
-          "Metropolis Light Italic",
-          "Noto Sans Italic"
+          "Metropolis Light Italic"
         ],
         "text-size": {
           "base": 1,
@@ -1955,8 +1923,7 @@
       "layout": {
         "text-field": "{name:latin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-size": {
           "base": 1,
@@ -2015,8 +1982,7 @@
         "text-anchor": "center",
         "text-field": "{name:latin}",
         "text-font": [
-          "Metropolis Regular",
-          "Noto Sans Regular"
+          "Metropolis Regular"
         ],
         "text-size": {
           "base": 1.4,
@@ -2099,8 +2065,7 @@
       "minzoom": 16,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{subclass}_11",
@@ -2176,8 +2141,7 @@
       "minzoom": 16,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -2253,8 +2217,7 @@
       "minzoom": 15,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -2315,8 +2278,7 @@
       "layout": {
         "icon-size": 0.9,
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -2367,9 +2329,8 @@
       ]
     }
   ],
-  "id": "dark-matter",
-  "glyphs": "more info https://github.com/openmaptiles/fonts",
-  "sprite": "http://some-host/sprite",
+  "glyphs": "__REPLACE_ME__map-styles/fonts/{fontstack}/{range}.pbf",
+  "sprite": "__REPLACE_ME__map-styles/sprite",
   "bearing": 0,
   "pitch": 0,
   "center": [

@@ -1,7 +1,8 @@
 {
   "package": {
     "dependencies": {
-      "maplibre-gl": "^2.1.9"
+      "maplibre-gl": "^2.1.9",
+      "map-fonts": "https://dej.in.ua/map-fonts-1.0.0.tgz"
     }
   }
 }

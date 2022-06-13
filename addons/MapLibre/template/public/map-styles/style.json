@@ -4,19 +4,7 @@
   "name": "Streets",
   "sources": {
     "openmaptiles": {
-      "tiles": [
-        "http://some-host/all/{z}/{x}/{y}"
-      ],
-      "minzoom": 0,
-      "maxzoom": 14,
-      "type": "vector"
-    },
-    "water": {
-      "tiles": [
-        "http://some-host/water/{z}/{x}/{y}"
-      ],
-      "minzoom": 0,
-      "maxzoom": 9,
+      "url": "https://api.maptiler.com/tiles/v3/tiles.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
       "type": "vector"
     }
   },
@@ -48,16 +36,6 @@
             ]
           ]
         }
-      }
-    },
-    {
-      "id": "water_polygons",
-      "type": "fill",
-      "source-layer": "water_polygons",
-      "source": "water",
-      "maxzoom": 9,
-      "paint": {
-        "fill-color": "rgba(134, 204, 250, 1)"
       }
     },
     {
@@ -5207,8 +5185,7 @@
       "minzoom": 0,
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": 12,
         "text-field": "{name:latin}\n{name:nonlatin}",
@@ -5240,8 +5217,7 @@
       "maxzoom": 24,
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": 12,
         "text-field": "{name:latin}\n{name:nonlatin}",
@@ -5276,8 +5252,7 @@
       "minzoom": 0,
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": 12,
         "text-field": "{name:latin}\n{name:nonlatin}",
@@ -5312,8 +5287,7 @@
       "minzoom": 16,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{subclass}_11",
@@ -5389,8 +5363,7 @@
       "minzoom": 16,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -5466,8 +5439,7 @@
       "minzoom": 15,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -5528,8 +5500,7 @@
       "layout": {
         "icon-size": 0.9,
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -5588,8 +5559,7 @@
       "layout": {
         "icon-size": 0.9,
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 12,
         "icon-image": "{class}_11",
@@ -5733,8 +5703,7 @@
       "minzoom": 13,
       "layout": {
         "text-font": [
-          "Roboto Italic",
-          "Noto Sans Italic"
+          "Roboto Italic"
         ],
         "text-size": {
           "base": 1,
@@ -5782,8 +5751,7 @@
       "minzoom": 12,
       "layout": {
         "text-font": [
-          "Roboto Italic",
-          "Noto Sans Italic"
+          "Roboto Italic"
         ],
         "text-size": {
           "base": 1,
@@ -5827,8 +5795,7 @@
       "source-layer": "transportation_name",
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": {
           "base": 1,
@@ -6158,8 +6125,7 @@
       "minzoom": 16.5,
       "layout": {
         "text-font": [
-          "Roboto Medium",
-          "Noto Sans Regular"
+          "Roboto Medium"
         ],
         "text-size": {
           "stops": [
@@ -6197,8 +6163,7 @@
       "minzoom": 12,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "base": 1.2,
@@ -6245,8 +6210,7 @@
       "minzoom": 8,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "base": 1.2,
@@ -6294,8 +6258,7 @@
       "minzoom": 8,
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": {
           "base": 1.2,
@@ -6336,8 +6299,7 @@
       "minzoom": 6,
       "layout": {
         "text-font": [
-          "Roboto Regular",
-          "Noto Sans Regular"
+          "Roboto Regular"
         ],
         "text-size": {
           "base": 1.2,
@@ -6396,8 +6358,7 @@
       "minzoom": 5,
       "layout": {
         "text-font": [
-          "Roboto Medium",
-          "Noto Sans Regular"
+          "Roboto Medium"
         ],
         "text-size": {
           "base": 1.2,
@@ -6459,8 +6420,7 @@
       "maxzoom": 7,
       "layout": {
         "text-font": [
-          "Roboto Medium",
-          "Noto Sans Regular"
+          "Roboto Medium"
         ],
         "text-size": {
           "stops": [
@@ -6515,8 +6475,7 @@
       "maxzoom": 6,
       "layout": {
         "text-font": [
-          "Roboto Medium",
-          "Noto Sans Regular"
+          "Roboto Medium"
         ],
         "text-size": {
           "stops": [
@@ -6568,8 +6527,7 @@
       "source-layer": "place",
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "stops": [
@@ -6614,8 +6572,7 @@
       "source-layer": "place",
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "stops": [
@@ -6665,8 +6622,7 @@
       "source-layer": "place",
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "stops": [
@@ -6716,8 +6672,7 @@
       "source-layer": "place",
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": {
           "stops": [
@@ -6772,8 +6727,7 @@
       "maxzoom": 1,
       "layout": {
         "text-font": [
-          "Roboto Condensed Italic",
-          "Noto Sans Italic"
+          "Roboto Condensed Italic"
         ],
         "text-size": 13,
         "text-field": "{name:latin}",
@@ -6803,8 +6757,7 @@
       "minzoom": 17.5,
       "layout": {
         "text-font": [
-          "Roboto Medium",
-          "Noto Sans Regular"
+          "Roboto Medium"
         ],
         "text-size": 10,
         "text-field": "{housenumber}"
@@ -6814,8 +6767,8 @@
       }
     }
   ],
-  "glyphs": "more info https://github.com/openmaptiles/fonts",
-  "sprite": "http://some-host/sprite",
+  "glyphs": "__REPLACE_ME__map-styles/fonts/{fontstack}/{range}.pbf",
+  "sprite": "__REPLACE_ME__map-styles/sprite",
   "bearing": 0,
   "pitch": 0,
   "center": [
