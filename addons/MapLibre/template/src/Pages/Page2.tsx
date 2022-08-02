@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {Map, StyleSpecification} from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import {useMapStore} from '@/store/map';
 
 const MapElement = styled.div`
   width: 500px;
@@ -9,7 +10,7 @@ const MapElement = styled.div`
 `;
 
 export const Page2 = () => {
-  const [map, setMap] = useState<Map | undefined>(undefined);
+  const setMap = useMapStore(state => state.setMap);
   const [style, setStyle] = useState<StyleSpecification | undefined>(undefined);
   const mapElement = useRef<HTMLDivElement>(null);
 
@@ -37,7 +38,7 @@ export const Page2 = () => {
         setMap(undefined);
       };
     }
-  }, [mapElement, style]);
+  }, [mapElement, style, setMap]);
 
   return (
     <>
