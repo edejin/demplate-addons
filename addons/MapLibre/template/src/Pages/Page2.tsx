@@ -7,6 +7,7 @@ import {useMapStore} from '@/store/map';
 const MapElement = styled.div`
   width: 500px;
   height: 500px;
+  position: relative;
 `;
 
 export const Page2 = () => {
