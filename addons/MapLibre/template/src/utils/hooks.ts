@@ -37,7 +37,7 @@ export function useMap(option: Options, cb: (m: Map) => (() => void) | void): Re
       });
 
       let destructor: void | (() => void);
-      m.on('style.load', () => destructor = cb(m));
+      m.once('style.load', () => destructor = cb(m));
 
       return () => {
         if (destructor) {
