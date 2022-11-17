@@ -3,6 +3,7 @@ const {addBabelPlugin} = require('customize-cra');
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
+const WebpackObfuscator = require('webpack-obfuscator');
 
 const cesiumSource = "node_modules/cesium/Source";
 const cesiumPath = "cesium";
@@ -41,6 +42,13 @@ module.exports = function override(config, env) {
         minify: false
       },
     ])(config);
+  } else {
+    config.plugins.push(
+      new WebpackObfuscator ({
+      }, [
+        // 'excluded_bundle_name.js'
+      ])
+    )
   }
 
   config.plugins.push(

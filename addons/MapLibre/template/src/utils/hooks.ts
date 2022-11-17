@@ -1,5 +1,7 @@
-import {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
+import ML, {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
 import {RefObject, useEffect, useRef, useState} from 'react';
+
+ML.workerUrl = './worker.js';
 
 export enum MapStyle {
   DARK = '/map-styles/style-dark.json',

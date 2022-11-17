@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {Scene, LineLayer} from '@antv/l7';
 import {Mapbox} from '@antv/l7-maps';
-import {Map, StyleSpecification} from 'maplibre-gl';
+import ML, {Map, StyleSpecification} from 'maplibre-gl';
+
+ML.workerUrl = './worker.js';
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
 const path = require('path');
 const {addBabelPlugin} = require('customize-cra');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WebpackObfuscator = require('webpack-obfuscator');
 
 const mapFontsSource = "node_modules/map-fonts";
 const mapFontsPath = "map-styles/fonts";
@@ -38,6 +39,13 @@ module.exports = function override(config, env) {
         minify: false
       },
     ])(config);
+  } else {
+    config.plugins.push(
+      new WebpackObfuscator ({
+      }, [
+        // 'excluded_bundle_name.js'
+      ])
+    )
   }
 
   config.plugins.push(
@@ -45,6 +53,9 @@ module.exports = function override(config, env) {
       patterns: [{
         from: mapFontsSource,
         to: mapFontsPath
+      }, {
+        from: 'node_modules/maplibre-gl/dist/maplibre-gl-csp-worker.js',
+        to: 'worker.js'
       }]
     })
   );
