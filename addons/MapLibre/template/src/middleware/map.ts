@@ -4,8 +4,7 @@ import {MapStore} from '@/store/map';
 export const mapMiddleware: Middleware<MapStore> = (config) => (
   set,
   get,
-  store,
-  $$storeMutations
+  store
 ) => config(args => {
   const {
     map: prevMap
@@ -21,4 +20,4 @@ export const mapMiddleware: Middleware<MapStore> = (config) => (
     // Map created
   }
 
-}, get, store, $$storeMutations);
+}, get, store);

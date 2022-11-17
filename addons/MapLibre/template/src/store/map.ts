@@ -1,13 +1,14 @@
-import {applyMiddleware, StoreInterface} from '@/utils/zustand';
+import {applyMiddleware} from '@/utils/zustand';
 import {Map} from 'maplibre-gl';
 import {mapMiddleware} from '@/middleware/map';
+import {StateCreator} from 'zustand';
 
 export interface MapStore {
   map?: Map;
   setMap: (map?: Map) => void;
 }
 
-const store: StoreInterface<MapStore> = (set, get) => ({
+const store: StateCreator<MapStore> = (set, get) => ({
   setMap: (map?: Map) => set(state => ({map})),
 });
 
